@@ -1,5 +1,5 @@
-mod random;
-mod unit_conversion;
+pub mod random;
+pub mod unit_conversion;
 
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
