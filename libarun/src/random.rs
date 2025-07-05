@@ -1,22 +1,21 @@
-pub fn flip_a_coin() -> u128 {
+use rand::Rng;
+use serde_json::json;
+
+pub fn flip_a_coin() -> &'static str {
     let coin = {
         let mut rng = rand::rng();
         rng.random::<bool>()
     };
 
-    if coin {
-        "heads"
-    } else {
-        "tails"
-    }
+    if coin { "heads" } else { "tails" }
 }
 
 pub fn random_number() -> u128 {
     let mut rng = rand::rng();
-    rng.random::<u128>().to_string()
+    rng.random()
 }
 
-pub fn random_colour() -> RgbA {
+pub fn random_colour() -> serde_json::Value {
     let mut rng = rand::rng();
 
     let r: u8 = rng.random();
@@ -34,5 +33,5 @@ pub fn random_colour() -> RgbA {
         "hex": hex,
     });
 
-    Json(res)
+    res
 }

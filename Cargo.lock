@@ -41,6 +41,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "libarun_macros"
+version = "0.1.0"
+dependencies = [
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.172"
 source = "registry+https://github.com/rust-lang/crates.io-index"
